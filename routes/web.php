@@ -1,18 +1,14 @@
 <?php
 
+use App\Http\Controllers\Controlador;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/formulario-amigos', [Controlador::class, 'amigosFormulario']);
+Route::get('/formulario-primos', [Controlador::class, 'primosFormulario']);
+Route::get('/formulario-promedio', [Controlador::class, 'promedioFormulario']);
+Route::get('/formulario-cuadratica', [Controlador::class, 'cuadraticaFormulario']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/formulario-amigos', [Controlador::class, 'amigos'])->name('amigos');
+Route::post('/formulario-primos', [Controlador::class, 'primos'])->name('primos');
+Route::post('/formulario-promedio', [Controlador::class, 'promedio'])->name('promedio');
+Route::post('/formulario-cuadratica', [Controlador::class, 'cuadratica'])->name('cuadratica');
